@@ -1,2 +1,2 @@
 # OS-Assignment
-FCFS,SJF,SRTF
+FCFS,SJF,RR
