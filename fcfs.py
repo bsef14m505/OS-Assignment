@@ -1,12 +1,24 @@
-arr = []
-w = 0
-n = int(raw_input('Total no of processes: '))
-for i in range(n):
- arr.append([])
- print "Enter Arrival Time of Process" , i+1
- arr[i].append(int(raw_input()))
- w += arr[i][0]
- print "Enter Burst Time of Process" , i+1
- arr[i].append(int(raw_input()))
-print 'Waiting time: ',w
-print 'Average Waiting time: ',(w/n)
+num=int(input("Enter Number Of Processes: "))
+arr=[]
+for i in xrange(num):
+    arr.append([0,0])
+    arr[i][0]=(int(input("Enter Arrival Time Of Process "+ repr(i+1) +" : ")))
+    arr[i][1]=(int(input("Enter Burst Time Of Process "+ repr(i+1) +" : ")))
+arr.sort()
+total=0
+idle=0
+i=0
+if arr[0][0]>0:
+    total=total+arr[0][0]
+    idle=idle + arr[0][0]
+while i!=num:
+    if arr[i][0]>total:
+        idle=idle+arr[i][0]-total
+        total=arr[i][0]
+        total=total+arr[i][1]
+    else:
+        total=total+arr[i][1]
+    i=i+1
+
+print "Total Time Consumed: ",total
+print "Total Idle Time: ",idle
