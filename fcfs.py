@@ -20,5 +20,5 @@ while i!=num:
         total=total+arr[i][1]
     i=i+1
 
-print "Total Time Consumed: ",total
+print "Total Time Consumed(Total Running Time): ",total
 print "Total Idle Time: ",idle

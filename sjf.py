@@ -1,30 +1,23 @@
-arr = []
-bt=[]
+print "In SJF, The Arrival Time for all proceses is zero\n"
+num=int(input("Enter Number Of Processes: "))
+arr=[]
+for i in xrange(num):
+    arr.append((int(input("Enter Burst Time Of Process "+ repr(i+1) +" : "))))
+arr.sort()
 total=0
-n = int(raw_input('Enter the total no of processes: '))
-for i in range(n):
- arr.append([])
- print "Enter Arrival Time of Process" , i+1
- arr[i].append(int(raw_input()))
- print "Enter Burst Time of Process" , i+1
- bt.append(int(raw_input()))
-j=1
-for i in xrange(n):
- p=i
- for j in xrange(n):
-  if bt[j]<bt[p]:
-   p=j
-  t=bt[i]
-  bt[i]=bt[p]
-  bt[p]=t
-  t=arr[i]
-  arr[i]=arr[p]
-  arr[p]=t
-j=0
-for i in xrange(n):
- wt=0
- for j in xrange(i):
-  wt+=bt[i]
- total+=wt
-print 'Waiting time: ',total
-print 'Average waiting time: ',(total/n)
+i=0
+avg=0
+ravg=0
+while i!=num:
+    total=total+int(arr[i])
+    j=i
+    while j>0:
+        avg=avg+arr[j-1]
+        print avg
+        j=j-1
+    print "\n"
+    ravg=ravg+avg
+    avg=0
+    i=i+1
+print "Total Running Time: ",total
+print "The Average Waiting Time: ",ravg/(1.00*num)
