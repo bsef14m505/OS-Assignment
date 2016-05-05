@@ -34,7 +34,8 @@ for i in range(num):
                 
 print "\nTotal Running Time: ", total
 print "Total Idle Time: ", idle
-print "\nProcess\t\tTurnaround Time"
+print "\nProcesses are sorted according to their arrival time"
+print "Process\t\tTurnaround Time"
 for i in range(num):
     print "P"+repr(i+1)+"\t\t",arr[i][3]-arr[i][2]
 
