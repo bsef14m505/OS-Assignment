@@ -2,11 +2,9 @@ arr=[]
 ready=[]
 total=0
 idle=0
-turn=[]
 num=input("Enter number of processes: ")
 qt=input("Enter Quantum time for Round Robin: ")
 for i in range(num):
-    turn.append(0)
     arr.append([0,0])
     arr[i][0]=input("Enter Arrival time of process "+repr(i+1)+" : ")
     arr[i][1]=input("Enter Burst time of process "+repr(i+1)+" : ")
